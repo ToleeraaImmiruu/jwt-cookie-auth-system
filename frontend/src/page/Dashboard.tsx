@@ -7,7 +7,6 @@ interface User {
   name: string;
   email: string;
 }
-
 const Dashboard = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState<User | null>(null);

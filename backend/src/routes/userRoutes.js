@@ -1,5 +1,5 @@
 import express from "express"
-import {Register , Login, Logout  } from "../controllers/userController.js"
+import {Register , Login, Logout,GetMe   } from "../controllers/userController.js"
 import { protect } from "../middlewares/authMiddleware.js";
 
 
@@ -10,12 +10,6 @@ router.post("/logout", Logout)
 
 
 
-router.get("/me", protect, (req, res) => {
-  res.json({
-    id: req.user.id,
-    email: req.user.email,
-    name: req.user.name,
-  });
-});
+router.get("/me", protect, GetMe);
 
 export default router;
